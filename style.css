@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+#cursor-glow {
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.05) 0%, transparent 80%);
+}
+
+.bg-image {
+    background: url('https://images.unsplash.com/photo-1536859355448-76f92ebdc33d?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;
+}
+
+.bg-overlay {
+    background: linear-gradient(160deg, rgba(10,25,47,0.92) 0%, rgba(10,25,47,0.85) 50%, rgba(10,25,47,0.95) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.particle {
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(100vh) scale(0); }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+}
+
+.avatar-img-wrapper {
+    background: linear-gradient(#0a192f, #0a192f) padding-box, linear-gradient(135deg, #64ffda, #8a2be2) border-box;
+}
+
+.avatar-glow {
+    background: conic-gradient(from 0deg, #64ffda, #8a2be2, #ff6b6b, #64ffda);
+    animation: spinRing 4s linear infinite;
+}
+
+@keyframes spinRing {
+    100% { transform: rotate(360deg); }
+}
+
+.avatar-wrap:hover .avatar-glow {
+    opacity: 0.8;
+    filter: blur(18px);
+}
+
+.avatar-wrap:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+}
+
+.scramble-char {
+    display: inline-block;
+    transition: opacity 0.1s;
+}
+
+.skill-chip {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.skill-chip.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.text-content p, .code-comment {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.text-content p.visible, .code-comment.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-info > * {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.hero-info > .anim-in {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
